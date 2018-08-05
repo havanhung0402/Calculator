@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity implements CalculatorFragmen
                 calculatorFragment.clearResult();
                 return true;
             case R.id.menuSave:
-                PreferenceSingleton.getEditor(getApplication()).putString(PreferenceSingleton.PREFERENCES_OBJECT_KEY, mResultSave);
-                PreferenceSingleton.getEditor(getApplication()).commit();
+                CalculatorFragment mFragment = (CalculatorFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
+                mFragment.saveResult();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
